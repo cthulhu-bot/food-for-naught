@@ -1,0 +1,29 @@
+{
+  "name": "food-for-naught",
+  "version": "1.0.0",
+  "description": "Food for naught!",
+  "main": "main.js",
+  "dependencies": {
+    "babel-preset-react": "^6.3.13",
+    "gulp": "^3.9.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-open": "^1.0.0",
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "webpack": "^1.12.11"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "(test)"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cthulhu-bot/food-for-naught.git"
+  },
+  "author": "Joshua Stupplebeen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cthulhu-bot/food-for-naught/issues"
+  },
+  "homepage": "https://github.com/cthulhu-bot/food-for-naught#readme"
+}
