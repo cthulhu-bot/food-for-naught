@@ -5,12 +5,14 @@
   "main": "main.js",
   "dependencies": {
     "babel-preset-react": "^6.3.13",
+    "browserify": "^13.0.0",
     "gulp": "^3.9.0",
     "gulp-connect": "^2.3.1",
     "gulp-open": "^1.0.0",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
-    "webpack": "^1.12.11"
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
   },
   "devDependencies": {},
   "scripts": {
