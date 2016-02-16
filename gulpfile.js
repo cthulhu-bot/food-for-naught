@@ -71,25 +71,6 @@ gulp.task('webpack-dev-server', function(callback) {
   })
 });
 
-/*
-gulp.task('webpack-dev-server', function(callback) {
-  var myConfig = Object.create(webpackConfig);
-  myConfig.devtool = 'eval';
-  myConfig.debug = true;
-  var compiler = webpack(myConfig);
-
-  new webpackDevServer(compiler, {
-    publicPath: "/" + myConfig.output.publicPath,
-    stats: {
-      colors: true
-    }
-  }).listen(8080, 'localhost', function(err) {
-    if (err) throw new gutil.PluginError('webpack-dev-server', err);
-    gutil.log('[webpack-dev-server]', 'http://localhost:8080/webpack-dev-server/index.html');
-  });
-});
-*/
-
 gulp.task('open', ['connect'], function() {
   gulp.src('dist/index.html')
       .pipe(open({ uri: config.devBaseUrl + ':' + config.port + '/'}));
@@ -125,9 +106,8 @@ gulp.task('lint', function() {
 
 gulp.task('watch', function() {
   gulp.watch(config.paths.html, ['html']);
-  gulp.watch(config.paths.html, ['js', 'lint']);
-  gulp.watch(path.ALL, ['webpack']);
+  gulp.watch(config.paths.js, ['js', 'lint']);
 });
 
 //gulp.task('default', ['html', 'js', 'css', 'lint', 'open', 'watch']);
-gulp.task('default', ['webpack-dev-server', 'watch']);
+gulp.task('default', ['lint', 'webpack', 'watch']);

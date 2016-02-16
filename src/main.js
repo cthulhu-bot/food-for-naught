@@ -1,6 +1,5 @@
-$ = jQuery = require('jquery');
-var App = console.log('Hello world from something.js');
+const App = 'wtf'
 
-var foo = 'asshole';
+const foo = 'asshole'
 
-module.exports = App;
+module.exports = App
