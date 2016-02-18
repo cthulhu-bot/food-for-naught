@@ -7,7 +7,7 @@ const allergyTypes = ['vegan',
                       'lacto-ovo vegetarian',
                       'pescetarian',
                       'peanut',
-                      'tree nut'
+                      'tree nut',
                       'soy',
                       'gluten',
                       'dairy',
@@ -25,19 +25,37 @@ const allergyTypes = ['vegan',
                       'heart healthy',
                       'low cholesterol']
 
-describe('a panera review', () {
-  let review = {
-    'panera':{
-      'gluten':[
-        'greek salad',
-        'classic salad'
-      ],
-      'vegan':[],
-      'vegetarian':[],
-      'ovo-vegan':[],
-      'lacto-vegetarian':[],
-    }
+/*
+  Basic data structure should conform to:
+    restaurant
+      food-restriction-01
+        menu-item-01
+        menu-item-02
+      food-restriction-02
+        menu-item-01
+        menu-item-02
+*/
+describe('a panera review', () => {
+  let addMenuItem = function(restaurant, foodRestriction, menuItem) {
+    restaurant[foodRestriction] = restaurant[foodRestriction].concat(menuItem)
+    return restaurant
   }
+
+  let panera = {
+    'name':'panera',
+    'location':'boulder',
+    'gluten':[],
+    'vegan':[],
+    'vegetarian':[],
+    'ovo-vegan':[],
+    'lacto-vegetarian':[]
+  }
+
+  let updatedPanera = addMenuItem(panera, 'gluten', 'house salad')
+
+  it('is an updated panera menu', () => {
+    expect(updatedPanera['gluten']).to.include('house salad')
+  })
 })
 
 describe('immutability', () => {
